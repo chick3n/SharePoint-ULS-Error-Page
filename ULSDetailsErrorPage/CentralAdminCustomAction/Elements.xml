@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Elements xmlns="http://schemas.microsoft.com/sharepoint/">
+  <CustomActionGroup
+    Id="CA_ULSError"
+    Location="Microsoft.SharePoint.Administration.Default"
+    Sequence="100"
+    Title="Error Page"
+    Description="Custom error page handler."
+    ImageUrl="/_layouts/IMAGES/CONTACT.GIF">
+    <UrlAction Url="/_admin/ULSError/settings.aspx"/>
+  </CustomActionGroup>
+  <CustomAction
+    Id="CA_ULSError_Settings"
+    GroupId="CA_ULSError"
+    Location="Microsoft.SharePoint.Administration.Default"
+    Title="ULS Error Page Settings"
+    Description="Configure settings for the default error page.">
+    <UrlAction
+      Url="/_admin/ULSError/settings.aspx" />
+  </CustomAction>
+    
+</Elements>

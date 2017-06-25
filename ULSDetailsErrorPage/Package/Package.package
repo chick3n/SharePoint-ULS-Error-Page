@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns:dm0="http://schemas.microsoft.com/VisualStudio/2008/DslTools/Core" dslVersion="1.0.0.0" Id="d1913a82-8ee1-4015-ad53-93fc773f3310" solutionId="d1913a82-8ee1-4015-ad53-93fc773f3310" resetWebServer="false" sharePointProductVersion="16.0" name="ULS Error Page Package" xmlns="http://schemas.microsoft.com/VisualStudio/2008/SharePointTools/PackageModel">
+  <assemblies>
+    <customAssembly location="ULSErrorPage.dll" deploymentTarget="GlobalAssemblyCache" sourcePath="bin\Debug\ULSErrorPage.dll">
+      <safeControls>
+        <safeControl assemblyName="ULSErrorPage" namespaceName="ULSError" typeName="*" isSafeAgainstScript="false" />
+      </safeControls>
+    </customAssembly>
+  </assemblies>
+  <features>
+    <featureReference itemId="5b447dac-e689-4b24-b4a3-0b358fe251b3" />
+    <featureReference itemId="57a5dcb2-ef18-41b1-abf2-3a5bc473716c" />
+  </features>
+  <projectItems>
+    <projectItemReference itemId="61c994b1-7f0c-44ed-9676-19d2ed0e351a" />
+    <projectItemReference itemId="82bb45ee-f1a7-4968-9412-3b49dbdb8492" />
+    <projectItemReference itemId="a615a7f2-1583-495f-85ad-6cc805001ba1" />
+    <projectItemReference itemId="efc6a98f-85cd-4c1a-a58d-bd934a0b32a2" />
+  </projectItems>
+</package>

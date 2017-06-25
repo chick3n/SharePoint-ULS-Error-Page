@@ -1,0 +1,205 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{24BE3578-DDE2-484F-8186-E9085BAB72F0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>ULSError</RootNamespace>
+    <AssemblyName>ULSErrorPage</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetOfficeVersion>16.0</TargetOfficeVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{C1CDDADD-2546-481F-9697-4EA41081F2FC};{14822709-B5A1-4724-98CA-57A101D1B079};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <MinimumVisualStudioVersion>14.0</MinimumVisualStudioVersion>
+    <MinimumOfficeToolsVersion>14.5</MinimumOfficeToolsVersion>
+    <SandboxedSolution>False</SandboxedSolution>
+    <IncludeAssemblyInPackage>False</IncludeAssemblyInPackage>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="Microsoft.SharePoint" />
+    <Reference Include="Microsoft.SharePoint.Client.ServerRuntime" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ControlTemplates\ULSDetailsErrorPage\ULSEntries.ascx.cs">
+      <DependentUpon>ULSEntries.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\ULSDetailsErrorPage\ULSEntries.ascx.designer.cs">
+      <DependentUpon>ULSEntries.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ControlTemplates\ULSDetailsErrorPage\ULSNotify.ascx.cs">
+      <DependentUpon>ULSNotify.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ControlTemplates\ULSDetailsErrorPage\ULSNotify.ascx.designer.cs">
+      <DependentUpon>ULSNotify.ascx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Administration.cs" />
+    <Compile Include="Core\Constants.cs" />
+    <Compile Include="Core\Logger.cs" />
+    <Compile Include="Core\Resource.cs" />
+    <Compile Include="Core\ULS.cs" />
+    <Compile Include="Features\ULSAdmin\ULSAdmin.EventReceiver.cs">
+      <DependentUpon>ULSAdmin.feature</DependentUpon>
+    </Compile>
+    <Compile Include="ADMIN\ULSError\settings.aspx.cs">
+      <DependentUpon>settings.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="ADMIN\ULSError\settings.aspx.designer.cs">
+      <DependentUpon>settings.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Features\ULSErrorPage\ULSErrorPage.EventReceiver.cs">
+      <DependentUpon>ULSErrorPage.feature</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\ULSError\Notify.aspx.cs">
+      <DependentUpon>Notify.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\ULSError\Notify.aspx.designer.cs">
+      <DependentUpon>Notify.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\ULSError\Test.aspx.cs">
+      <DependentUpon>Test.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\ULSError\Test.aspx.designer.cs">
+      <DependentUpon>Test.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Layouts\ULSError\ULSDetails.aspx.cs">
+      <DependentUpon>ULSDetails.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Layouts\ULSError\ULSDetails.aspx.designer.cs">
+      <DependentUpon>ULSDetails.aspx.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Resources\ulserrorpage.fr-FR.Designer.cs">
+      <DependentUpon>ulserrorpage.fr-FR.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ulserrorpage.en-US.Designer.cs">
+      <DependentUpon>ulserrorpage.en-US.resx</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\ulserrorpage.en-CA.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ulserrorpage.en-CA.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="ADMIN\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{61c994b1-7f0c-44ed-9676-19d2ed0e351a}</SharePointProjectItemId>
+    </None>
+    <None Include="CentralAdminCustomAction\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{09ed7ed3-eb3d-411f-9235-7dbc7d14d07b}</SharePointProjectItemId>
+    </None>
+    <None Include="ControlTemplates\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{82bb45ee-f1a7-4968-9412-3b49dbdb8492}</SharePointProjectItemId>
+    </None>
+    <None Include="Features\ULSErrorPage\ULSErrorPage.feature">
+      <FeatureId>{57a5dcb2-ef18-41b1-abf2-3a5bc473716c}</FeatureId>
+    </None>
+    <None Include="Features\ULSAdmin\ULSAdmin.feature">
+      <FeatureId>{5b447dac-e689-4b24-b4a3-0b358fe251b3}</FeatureId>
+    </None>
+    <None Include="key.snk" />
+    <None Include="Layouts\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{a615a7f2-1583-495f-85ad-6cc805001ba1}</SharePointProjectItemId>
+    </None>
+    <None Include="Package\Package.package">
+      <PackageId>{d1913a82-8ee1-4015-ad53-93fc773f3310}</PackageId>
+    </None>
+    <None Include="Package\Package.Template.xml">
+      <DependentUpon>Package.package</DependentUpon>
+    </None>
+    <None Include="Resources\SharePointProjectItem.spdata">
+      <SharePointProjectItemId>{efc6a98f-85cd-4c1a-a58d-bd934a0b32a2}</SharePointProjectItemId>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ulserrorpage.en-CA.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ulserrorpage.en-CA.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="CentralAdminCustomAction\Elements.xml">
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="ControlTemplates\ULSDetailsErrorPage\ULSEntries.ascx" />
+    <Content Include="ControlTemplates\ULSDetailsErrorPage\ULSNotify.ascx" />
+    <Content Include="errorpage.txt" />
+    <Content Include="Features\ULSErrorPage\ULSErrorPage.Template.xml">
+      <DependentUpon>ULSErrorPage.feature</DependentUpon>
+    </Content>
+    <Content Include="Features\ULSAdmin\ULSAdmin.Template.xml">
+      <DependentUpon>ULSAdmin.feature</DependentUpon>
+    </Content>
+    <Content Include="ADMIN\ULSError\settings.aspx" />
+    <Content Include="Layouts\ULSError\Notify.aspx" />
+    <Content Include="Layouts\ULSError\Test.aspx" />
+    <Content Include="Layouts\ULSError\ULSDetails.aspx" />
+    <Content Include="Layouts\ULSError\ULSErrorPage.aspx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ulserrorpage.en-US.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ulserrorpage.en-US.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\ulserrorpage.fr-FR.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>ulserrorpage.fr-FR.Designer.cs</LastGenOutput>
+    </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(VSToolsPath)\SharePointTools\Microsoft.VisualStudio.SharePoint.targets" Condition="'$(VSToolsPath)' != ''" />
+</Project>
